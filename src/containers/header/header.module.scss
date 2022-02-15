@@ -1,0 +1,35 @@
+/* Fonts */
+@font-face {
+    font-family: "ubuntu";
+    src: url("../../../public/Ubuntu-Regular.ttf");
+}
+@font-face {
+    font-family: "redressed";
+    src: url("../../../public/Redressed-Regular.ttf");
+}
+
+
+.header{
+   
+    /* background-color: turquoise; */
+    background-image: linear-gradient(rgb(64, 128, 224), white );
+    height:200px;
+    color:rgb(31, 34, 48);
+    
+    width: 100vw;
+    display:flex;
+    justify-content: space-between;
+
+    p{
+        margin: 15px 50px 15px ;
+        padding:15px 50px;
+        /* font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+        font-family: "redressed";
+        font-size: 3rem;
+        
+    }
+    .date{
+        color:rgb(31, 34, 48);
+        font-size:2rem
+    }
+}
