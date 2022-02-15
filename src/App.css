@@ -3,5 +3,7 @@
 }
 
 .body{
-    background-color: coral;
+    background-color: rgb(27, 26, 26);
+    width:100vw;
+    height:100vh;
 }
