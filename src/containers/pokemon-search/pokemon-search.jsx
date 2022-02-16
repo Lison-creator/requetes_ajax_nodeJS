@@ -21,15 +21,21 @@ const PokemonSearch = () => {
         setPokemonData(null);
 
         /* Envoi de la requête */
-        axios.get("https://pokeapi.co/api/v2/pokemon-species/325")
-            .then(reponse => {
-                const data = { name, legendary, habitat, captureRate, flavorText };
+        axios.get('https://pokeapi.co/api/v2/pokemon-species/725')
+            .then(response => {
+                setPokemonData({
+                    name: response.data.name,
+                    legendary: response.data.is_legendary,
+                    habitat: response.data.habitat?.name,
+                    captureRate: response.data.capture_rate,
+                    flavorText: 'TODO ;)'
+                });
             })
             .catch(error => {
-
+                setErrorMessage(error.message);
             })
             .finally(() => {
-
+                setLoading(false);
             })
     };
 
@@ -37,6 +43,12 @@ const PokemonSearch = () => {
         <main>
             <h1>Démo des requêtes AJAX</h1>
             <button onClick={handleSearchPokemon}>Rechercher un pokemon</button>
+            {isLoading ? (
+                <LoadingScreen />) : errorMessage ? (
+                    <h2>{errorMessage}</h2>
+                ) : pokemonData !== null && (
+                    <Pokemon {...pokemonData} />
+                )}
         </main>
     )
 }
